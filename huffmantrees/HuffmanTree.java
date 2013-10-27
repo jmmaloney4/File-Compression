@@ -143,7 +143,7 @@ public class HuffmanTree {
 			System.out.println("\nTime --> " + (time2 - time1));
 			times[r] = (time2 - time1);
 			r++;
-			System.out.println("Your Efficency Precentage Is: " + (((1 - (float) writeLength / (float) length)) * 100) + "%");
+			System.out.println("Your Efficency Precentage Is: " + (((1 - (float) writeLength / (float) length)) * 100) + "%\n\n Next Run: \n");
 		}
 		long z = 0;
 		System.out.print("\n\n\n");
