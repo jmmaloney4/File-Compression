@@ -124,10 +124,11 @@ public class HuffmanTree {
 			HuffmanTree.buildCodes(node, "", StrTable);
 			System.out.println(StrTable);
 			int writeLength = 0;
+			System.out.println("\nFile Below: ");
 			int ch = reader2.read();
 			while (ch != -1) {
 				String i = StrTable.get((char)ch);
-				writer.append(i);
+				System.out.print(i);
 				writeLength = i.length() + writeLength;
 				ch = reader2.read();
 			}
@@ -137,7 +138,7 @@ public class HuffmanTree {
 			long time2 = System.currentTimeMillis();
 
 			length = length * 8;
-			System.out.println("---------> " + length);
+			System.out.println("\n\n---------> " + length);
 			System.out.println("---------> " + writeLength);
 			System.out.println("\nTime --> " + (time2 - time1));
 			times[r] = (time2 - time1);
