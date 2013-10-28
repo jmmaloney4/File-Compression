@@ -151,7 +151,7 @@ public class HuffmanTree {
 			z = z + times[q];
 			System.out.println(times[q]);
 		}
-		System.out.println("\n\n\n\nAverage Time ====> " + (z / a));
+		System.out.println("\n\n\n\nAverage Time ====> " + (z / (a - 2)));
 		
 		
 	}
