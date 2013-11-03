@@ -1,4 +1,4 @@
-Science-Fair-Project-2013-2014
+File Compression
 ==============================
 Find all extra test files, output files (etc) in the /Extras folder
 
