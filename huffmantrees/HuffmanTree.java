@@ -19,9 +19,11 @@ import java.util.Scanner;
 public class HuffmanTree {
 
 	int a = 0;
-	
+
 	/**
-	 * takes the root node, a temporary string, and a table to put the codes and the character in
+	 * takes the root node, a temporary string, and a table to put the codes and
+	 * the character in
+	 * 
 	 * @param n
 	 * @param code
 	 * @param tbl
@@ -43,6 +45,7 @@ public class HuffmanTree {
 
 	/**
 	 * the main function of the program
+	 * 
 	 * @param args
 	 * @throws IOException
 	 */
@@ -57,25 +60,27 @@ public class HuffmanTree {
 		long[] times = new long[a];
 
 		for (int s1 = 0; s1 < a; s1++) {
-			//time #1 for timing the program
+			// time #1 for timing the program
 			long time1 = System.currentTimeMillis();
-			
+
 			Comparator NodeComparator = new NodeComparator();
 			Comparator NodeComparator2 = new NodeComparator2();
 			PriorityQueue<Node> priQue = new PriorityQueue(50, NodeComparator2);
 			PriorityQueue<Node> NodeQue = new PriorityQueue(50, NodeComparator);
-			//input file
+			// input file
 			File file = new File(args[0]);
 			Reader reader = new BufferedReader(new FileReader(file));
 			Reader reader2 = new BufferedReader(new FileReader(file));
 			Map<Character, Integer> table = new HashMap<Character, Integer>(40);
 			Map<Character, String> StrTable = new HashMap<Character, String>(40);
-			//output file, dosn't actually do anything right now, everything gets put to stdout
+			// output file, dosn't actually do anything right now, everything
+			// gets put to stdout
 			File writeFile = new File(args[1]);
 			Writer writer = new BufferedWriter(new FileWriter(writeFile, true));
 			Reader reader3 = new BufferedReader(new FileReader(writeFile));
-			
-			//reads the length of the file and records the frequency of each character
+
+			// reads the length of the file and records the frequency of each
+			// character
 			int c = reader.read();
 			int length = 0;
 			while (c != -1) {
@@ -97,7 +102,7 @@ public class HuffmanTree {
 			Node EOFNode = new Node();
 			EOFNode.setValue(-1);
 			priQue.add(EOFNode);
-			
+
 			while (iter.hasNext()) {
 				Entry<Character, Integer> set = iter.next();
 				Character ch = set.getKey();
@@ -140,8 +145,8 @@ public class HuffmanTree {
 			}
 			writer.append(StrTable.get(null));
 			writer.close();
-			
-			//second time for timeing the computation
+
+			// second time for timeing the computation
 			long time2 = System.currentTimeMillis();
 
 			length = length * 8;
@@ -160,8 +165,11 @@ public class HuffmanTree {
 			z = z + times[q];
 			System.out.println(times[q]);
 		}
-		System.out.println("\n\n\n\nAverage Time ====> " + (z / (a - 2)));
-
+		if ((a - 2) != 0) {
+			System.out.println("\n\n\n\nAverage Time ====> " + (z / (a - 2)));
+		} else {
+			System.out.println("Unable to Caluclate Average");
+		}
 	}
 
 }
