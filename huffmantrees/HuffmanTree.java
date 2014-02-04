@@ -143,7 +143,7 @@ public class HuffmanTree {
 				writeLength = i.length() + writeLength;
 				ch = reader2.read();
 			}
-			writer.append(StrTable.get(null));
+			writer.append((StrTable.get(null)));
 			writer.close();
 
 			// second time for timeing the computation
