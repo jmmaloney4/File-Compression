@@ -165,6 +165,7 @@ public class HuffmanTree {
 			z = z + times[q];
 			System.out.println(times[q]);
 		}
+		// if statement Removes a Divide by 0 error
 		if ((a - 2) != 0) {
 			System.out.println("\n\n\n\nAverage Time ====> " + (z / (a - 2)));
 		} else {
